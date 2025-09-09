@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Chatbot</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="app-container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <h2>History</h2>
+        <button id="new-chat-btn"><i class="fas fa-plus"></i> New Chat</button>
+        <ul id="history-list"></ul>
+        <div class="settings">
+          <h3>Settings</h3>
+          <div class="setting-item">
+            <span>Background</span>
+            <div class="background-options">
+              <button style="background: #f0f2f5" data-bg="default"></button>
+              <button style="background: #e0f7fa" data-bg="#e0f7fa"></button>
+              <button style="background: #fff9c4" data-bg="#fff9c4"></button>
+              <button style="background: #fce4ec" data-bg="#fce4ec"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Chat Area -->
+      <div class="chatbot-container">
+        <div class="chatbot-header">
+          <h1>Chat-gpt</h1>
+          <div class="header-actions">
+            <button id="export-chat" class="header-btn">
+              <i class="fas fa-download"></i>
+            </button>
+            <button id="clear-chat" class="header-btn">
+              <i class="fas fa-trash"></i>
+            </button>
+            <i id="theme-switcher" class="fas fa-moon"></i>
+          </div>
+        </div>
+        <div class="chatbot-messages" id="chatbot-messages">
+          <div class="message bot-message">
+            Hello! I'm your AI Chatbot. Ask me anything...
+          </div>
+        </div>
+        <form class="chatbot-input-form" id="chatbot-form">
+          <div class="input-wrapper">
+            <input
+              type="text"
+              class="chatbot-input"
+              id="user-input"
+              placeholder="Ask a question..."
+              required
+            />
+            <button type="button" class="voice-input-btn" id="voice-input-btn">
+              <i class="fas fa-microphone"></i>
+            </button>
+            <div class="char-counter">0/500</div>
+          </div>
+          <button type="submit" class="chatbot-submit-btn">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+    <script src="script.js" type="module"></script>
+    <!-- Add type="module" to your script tag -->
+    <script src="LLM.js" type="module"></script>
+  </body>
+</html>
